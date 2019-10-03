@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cafés Mañana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/chartist.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/estilo.css" />
+    
+</head>
+<body>
+    <div contenedor>
+        <div id="encabezado">
+            
+            <a href="index.html"><img src="img/logo.png" class="logo"></a>
+        </div>
+        
+        <div id="nav">
+            <ol>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="empresa.html">EMPRESA</a></li>
+                    <li><a href="distribuidores.html">DISTRIBUIDORES</a></li>
+                    <li><a href="contactos.html">CONTACTOS</a></li>
+            </ol>
+        </div>
+        <div id="cuerpo" class="info">
+
+            <h1>Quiénes Somos</h1>
+            <p>En Cafés Mañana somos fabricantes y proveedores de café desde 1956. 
+                Desde nuestros inicios, nos hemos distinguido por utilizar solamente 
+                las mejores materias primas, por eso nos hemos ganado la confianza tanto 
+                de los profesionales de la hostelería como de los clientes particulares, 
+                que acuden a nosotros por la calidad de nuestros productos y por el 
+                asesoramiento personalizado que ofrecemos.</p>
+                
+            <p>Somos una empresa radicada en Valencia con una larga experiencia en el 
+                sector y que ha mantenido todo este tiempo un método artesanal de producción, 
+                para garantizar los mejores cafés, perfectos para cada ocasión. Comenzamos en 
+                el año 1956 con un local de 400 metros cuadrados en el centro de la capital y, 
+                desde entonces, hemos ido evolucionando y modernizándonos, respetando al mismo 
+                tiempo la tradición. En 1980 nos trasladamos a nuestra sede actual, que se 
+                encuentra en la localidad de Manises, con más de 3.000 metros cuadrados, y en 
+                la que disponemos de nuestra fábrica, en la que desarrollamos nuestras creaciones 
+                con las mejores materias primas.</p>
+                
+                
+                <img src="img/cafe-empresa.jpg" alt="cafe"  rel="cafe mañana" class="imagen-info">
+                
+                <br>
+                <p>¿Qué es lo que nos distingue de otras empresas de café? Que nos ocupamos 
+                    de todo el proceso, desde la fabricación de los cafés que comercializamos 
+                    hasta la supervisión de todos los productos que fuera de los que fabricamos: 
+                    certificamos la calidad de todo lo que vendemos y, por eso, restaurantes, bares
+                     u hoteles confían en nosotros desde hace décadas para que les proporcionemos un 
+                     servicio integral.</p>
+                
+                     <div class="cualidades">
+                         <img src="./img/empresa/fabricacion.jpg" rel="fabricacion">
+                        <h2>FABRICACIÓN</h2>
+                        <p>Nuestro proceso de fabricación respeta la tradición desde hace varias generaciones 
+                            de profesionales cafeteros. Cafés Mañana sigue y seguirá manteniendo la calidad de 
+                            todos sus productos, seleccionando y mezclando las mejores clases de café, los 
+                            aromáticos y ácidos arábicas de Centro América con los arábicas neutros de Brasil.</p>
+                    </div>
+
+                    <div class="cualidades">
+                        <img src="img/empresa/supervision.jpg" rel="supervision">
+                        <h2>SUPERVISIÓN</h2>
+                        <P>Somos mucho más que café: te ofrecemos todo lo que necesitas para disfrutar de una 
+                            buena taza de café. Tenemos cápsulas para cafeteras Nespresso, café en grano y molido, 
+                            leche en distintos formatos, infusiones, chocolate, galletas y bollería y más. Todo ello 
+                            con el sello de calidad de Cafés Mañana gracias a nuestra estricta supervisión.</P>
+                    </div>
+                    
+                    <div class="cualidades">
+                        <img src="img/empresa/distribucioncafe.jpg" rel="distribusion">
+                        <h2>DISTRIBUCIÓN</h2>
+                        <p>Distribuimos nuestro café de forma rápida y eficiente, para que conserve todo su cuerpo 
+                            y sabor. Somos líderes en cafés para hostelería en Valencia gracias a nuestro catálogo. 
+                            Nos basamos en tres pilares: gran calidad del producto, cuidada atención al cliente y servicio 
+                            esencial gracias a nuestra cercanía y modernos métodos de transporte.</p>
+                    </div>
+                    <h1>Ventas Anuales</h1>
+                    <div id="chart_div"></div>
+            </div>
+
+        <div id="footer">
+            &copy; 2019. Todos los derechos reservados.</br>
+            Maracaibo - Venezuela
+        </div>
+    </div>
+<script src="./js/chartist.js"></script>
+<script type="text/javascript">
+/* Add a basic data series with six labels and values */
+var data = {
+  labels: ['2013', '2014', '2015', '2016', '2017', '2018'],
+  series: [
+    {
+      data: [300, 400, 500, 580, 700, 800]
+    }
+  ],
+  
+
+};
+
+/* Set some base options (settings will override the default settings in Chartist.js *see default settings*). We are adding a basic label interpolation function for the xAxis labels. */
+var options = {
+  axisX: {
+    labelInterpolationFnc: function(value) {
+      return 'Año ' + value;
+    }
+  },
+  showArea: true,
+  high: 1000,
+  low: 0
+};
+
+/* Now we can specify multiple responsive settings that will override the base settings based on order and if the media queries match. In this example we are changing the visibility of dots and lines as well as use different label interpolations for space reasons. */
+var responsiveOptions = [
+  ['screen and (min-width: 641px) and (max-width: 1024px)', {
+    showPoint: true,
+    axisX: {
+      labelInterpolationFnc: function(value) {
+        return 'Año ' + value;
+      }
+    }
+  }],
+  ['screen and (max-width: 640px)', {
+    showLine: true,
+    axisX: {
+      labelInterpolationFnc: function(value) {
+        return value;
+      }
+    }
+  }]
+];
+
+/* Initialize the chart with the above settings */
+new Chartist.Line('#chart_div', data, options, responsiveOptions);
+</script>
+</body>
+</html>

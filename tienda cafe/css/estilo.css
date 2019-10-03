@@ -1,0 +1,312 @@
+html{
+    font-size: 16px;
+}
+
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url("../img/cafe-fondo.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    margin-left:0px;
+    margin-right: 0px;
+}
+
+.logo{
+    width: 31rem;
+    height: 12rem;
+    margin: 0 1.5rem;
+}
+
+#contenedor{
+    
+    width: 100%;
+    height: 100%;
+}
+
+#encabezado{
+    width:100%;
+    height: 100%;
+    font-size: 2rem;
+}
+
+#nav{
+    background: rgba(255, 255, 255, 0.877);
+    width: 100%;
+    margin: 0px;
+    padding:0px;
+
+
+    
+}
+#nav ol{
+    list-style: none;
+    display: flex;
+    padding-left: 0px;
+    
+}
+
+#nav ol li{
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid black;
+    
+}
+
+
+#nav ol li a{
+    text-decoration: none;
+    display:block;
+    padding: 20px 25px;
+    color:black;
+    
+}
+
+#nav ol li a:hover{
+    color:white;
+    background: black;
+}
+
+#cuerpo{
+    height: 100%;
+    margin-bottom: 5%;
+}
+
+#footer{
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.seccion{
+    display: flex;
+}
+
+.seccion img{
+    width: 30%;
+    border-radius: 100%;
+    padding: 0 2rem;
+}
+
+.info{
+    width: 100%;
+    background: white;
+    padding-bottom:2%;
+}
+
+.info p{
+    margin-left:5%;
+    margin-right: 5%;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+.info h1{
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 5%;
+}
+
+.info h2{
+    text-align: center;
+}
+
+.imagen-info{
+    
+    width:90%; 
+    height:400px;
+    padding-left: 5%;
+}
+
+.cualidades{
+    display:inline-table;
+    width: 28%;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    margin-top: 4%;
+}
+
+
+.cualidades h2{
+    text-align: center;
+}
+
+.cualidades img{
+    height: 70%;
+    width: 70%;
+    border-radius: 100%;
+    border: 2px solid red;
+    margin-left: 12%;
+}
+
+.cualidades img:hover{
+    border: 2px solid green;
+}
+
+.producto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.producto img{
+    display: block;
+    margin: 0 auto;
+}
+
+.producto p{
+    font-size: 2rem;
+}
+
+.producto h1{
+    color: red;
+    text-align: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem;
+}
+
+#chart_div{
+    width: 100%;
+    height: 30rem;
+}
+
+.contactos{
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 2rem;
+    padding: 2rem;
+}
+
+.contactos > div{
+    text-align: center;
+}
+
+.contactos form{
+    background: lightgray;
+    padding: 2rem;
+    border-radius: 2px 2px;
+    width: 20rem;
+    
+}
+
+.contactos form input{
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    font-size: 1.2rem;
+    
+}
+
+.contactos form input[type=text],
+.contactos form input[type=email]{
+    background: transparent;
+    border: 0;
+    border-bottom:1px solid darkred;
+}
+
+.contactos form input[type="text"]::selection{
+    box-shadow: 30px 20px 20px red;
+}
+
+.contactos form input[type=submit]{
+    background: darkred;
+    border: 0;
+    padding: 1rem;
+    color: white;
+}
+
+.contactos form textarea{
+    display: block;
+    width: 100%;
+    height: 10rem;
+    margin: auto;
+    font-size: 1.2rem;
+}
+
+
+@media screen and (max-width: 578px){
+    html{
+        font-size: 13px;
+    }
+
+    #encabezado a{
+        display: block;
+    }
+    .logo{
+        display: block;
+        width: 100%;
+        margin: 0;
+
+    }
+
+    #nav ol{
+        display: block;
+    }
+
+    #nav ol li{
+        border-right: 0;
+    }
+
+    #nav ol li:not(:first-child){
+        border-top: 1px solid black;
+    }
+
+    .cualidades{
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    .cualidades img{
+        margin-left:0;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .seccion{
+        display: block;
+    }
+
+    .seccion img{
+        width: 100%;
+        padding:0;
+    }
+
+    .grid{
+        grid-template-columns: 100%;
+    }
+
+    #chart_div{
+        width: 100%;
+        max-width: 100%;
+        height: 30rem;
+    }
+
+    .contactos{
+        
+        display: block;
+       
+    }
+
+    .contactos form{
+        width: auto;
+    }
+
+    .contactos iframe{
+        width: 100%;
+    }
+
+    .imagen-info{
+        height: 100%;
+        margin: 2rem auto;
+    }
+}
